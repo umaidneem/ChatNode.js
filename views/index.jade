@@ -1,0 +1,22 @@
+extends layout
+
+block content
+
+    input(type="button",value="Sign Up",onclick="SignUpFunction()")
+    br
+    br
+    input(type="button",value="Sign In",onclick="SignInFunction()")
+
+
+    script.
+        {
+            function SignUpFunction() {
+                window.location.href = '/SignUpScreen'
+            }
+
+            function SignInFunction() {
+                window.location.href = '/LoginScreen'
+            }
+
+        }
+

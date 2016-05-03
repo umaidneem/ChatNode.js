@@ -1,0 +1,56 @@
+//
+   Created by umaid on 4/27/16.
+
+
+html
+    meta(charset='utf-8')
+    title Chat
+
+    script(src='/routes/Home.js')
+
+    script(type='text/javascript', src='http://code.jquery.com/jquery.min.js')
+    script(type='text/javascript').
+        $(document).ready(function ()
+        {
+            $("button").click(function ()
+            {
+                var room = [];
+                $.each($("input[name='tick']:checked"), function ()
+                {
+                    room.push($(this).val());
+                    alert($(this).val());
+
+                });
+
+                var string = #{globalCurrentUserId} + "_" + room.join("_");
+                alert("Selected persons are: " + string);
+                window.location.href = '/ChatPage'
+
+
+            });
+
+        });
+
+
+body
+    form
+        h2 Users
+        each user, i in Home
+
+            label
+                input#buttonClick()//type='checkbox',name='tick', value=user.user_id)
+                |   #{user.firstName}
+            br
+            br
+
+            button(type='button') Get Users
+    //#{globalCurrentUserId} Current User Id
+        //br
+        //br
+
+
+
+    //form(method="post" action="/chatAction")
+
+
+
